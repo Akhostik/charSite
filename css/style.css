@@ -1,0 +1,121 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: grey;
+}
+
+body h1,h2,h3,h4,h5{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.fr{
+    float: right;
+}
+.second{
+    margin-left: 3rem;
+}
+  
+
+.row, col{
+    margin: 0;
+    padding: 0;
+}
+
+.collection-item{
+    background-color: whitesmoke;
+}
+
+.space{
+    height: 3rem;
+}
+
+.outline{
+    border: 1px solid teal;
+    color: teal;
+    background-color: transparent;
+}
+
+.pad{
+    padding: 4rem;
+}
+
+.card{
+    padding-bottom: 2rem ;
+}
+
+.list-item{
+    
+   list-style: disc;
+ 
+}
+
+.writings{
+    margin-top: 2rem;
+}
+
+.green-border{
+    border: #00bfa5 10px solid;
+    position: relative;
+    padding: 20px 10px;
+}
+
+.bigger-card{
+
+}
+
+.fundUsage{
+  
+}
+
+.border-lines{
+    border: 1px grey solid;
+    
+    padding: 10px 10px;
+}
+
+
+
+nav li{
+    font-weight: 500;
+
+}
+
+nav li a:hover{
+    
+   background:  #00bfa5;
+   color: white;
+   font-weight: 1000;
+    
+}
+
+
+.brand-logo{
+ font-weight: 500;
+ 
+}
+
+.brand-logo:hover{
+    font-weight: 900;
+}
+
+.special-green{
+
+    background-color: #00bfa5;
+}
+
+.special-green2{
+    background-color: #1de9b6;
+}
+
+.donate-color{
+    color: #1de9b6;
+}
+
+.round-hover:hover{
+ font-weight: bolder;
+border: 3px solid #00bfa5;
+
+}
+
+#grad{
+    background-image: linear-gradient(to right, teal, #00bfa5);
+}
