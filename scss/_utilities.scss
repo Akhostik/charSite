@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Lobster&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+// colors
+$primaryColor: rgb(255, 116, 104);
+$secondaryColor: rgb(83, 168, 164);
+$accentColor: rgb(35, 39, 73); 
+$brandBlack: #757575;
+
+$btnFont: 1.01rem;
+$titleFont: 1.3rem;
+$textFont: 1.1rem;
+
+// reusable mixins
+@mixin boxShadow($x, $y, $blur, $color, $opaq) {
+    box-shadow: $x $y $blur rgba($color: $color, $alpha: $opaq);
+}
+
+@mixin btn($py, $px, $tcolor, $color, $radius) {
+    color: $tcolor;
+    background: $color;
+    border-radius: $radius;
+    padding: $py $px;
+    text-transform: capitalize;
+    font-size: $btnFont;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: .3pt;
+    @include boxShadow(0, 4px, 8px, $brandBlack, 0.15);
+
+    &:hover {
+        background: darken($color: $primaryColor, $amount: 5);
+        @include boxShadow(0, 4px, 10px, $brandBlack, 0.2);
+    }
+}
+
+@mixin btnIcon() {
+    padding: .35rem .4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background: lighten($color: $secondaryColor, $amount: 35);
+    // border: 1px solid red;
+    @include boxShadow(0, 4px, 8px, #000, 0.2);
+    
+    display: flex;
+    flex-direction: column;
+     
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    &:hover {
+        @include boxShadow(0, 4px, 8px, #000, 0.2);
+        transform: scale(1.05);
+        
+        // @extend .animate__pulse;
+    }
+
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
+
+@mixin flatBtn($py, $px, $tcolor, $color) {
+    padding: $py $px;
+    text-transform: capitalize;
+    color: $tcolor;
+    background: $color;
+    font-weight: 500;
+    font-size: $btnFont;
+    letter-spacing: .3pt;
+    cursor: pointer;
+}
+
+@mixin inputField($bg, $color, $bcolor, $py, $px, $size, $radius, $weight) {
+    border: 1px solid lighten($color: $bcolor, $amount: 10);
+    border-radius: $radius;
+    background: $bg;
+    outline: none;
+    padding: $py $px;
+
+    font-size: $size;
+    font-weight: $weight;
+    font-family: 'Lato' sans-serif;
+    text-transform: capitalize;
+    color: $color;
+
+    &::placeholder {
+        font-size: $size;
+        font-weight: $weight;
+        text-transform: capitalize;
+        color: $color;
+    }
+
+    &[type=email] {
+        text-transform: lowercase !important;
+    }
+}
+
+@mixin overline($color, $weight, $size) {
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin heading($color, $scolor, $size, $weight, $transform, $family) {
+    font-family: $family, sans-serif !important;
+    font-size: $size;
+    font-weight: $weight;
+    text-transform: $transform;
+    color: $color;
+
+    span.em {
+        color: $scolor;
+    }
+
+    span {
+        color: $primaryColor;
+    }
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.transition {
+    -webkit-transition: all 0.2s 0s ease;
+    -moz-transition: all 0.2s 0s ease;
+    -o-transition: all 0.2s 0s ease;
+    transition: all 0.2s 0s ease;
+}
+
+[class*="col-"] {
+    padding: 1rem;
+    // border: 1px solid red;
+  }
