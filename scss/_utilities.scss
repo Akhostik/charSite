@@ -33,6 +33,36 @@ $textFont: 1.1rem;
     }
 }
 
+@mixin btnIcon() {
+    padding: .35rem .4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background: lighten($color: $secondaryColor, $amount: 35);
+    // border: 1px solid red;
+    @include boxShadow(0, 4px, 8px, #000, 0.2);
+    
+    display: flex;
+    flex-direction: column;
+     
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    &:hover {
+        @include boxShadow(0, 4px, 8px, #000, 0.2);
+        transform: scale(1.05);
+        
+        // @extend .animate__pulse;
+    }
+
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
+
 @mixin flatBtn($py, $px, $tcolor, $color) {
     padding: $py $px;
     text-transform: capitalize;
@@ -44,8 +74,29 @@ $textFont: 1.1rem;
     cursor: pointer;
 }
 
-@mixin inputField() {
-    
+@mixin inputField($bg, $color, $bcolor, $py, $px, $size, $radius, $weight) {
+    border: 1px solid lighten($color: $bcolor, $amount: 10);
+    border-radius: $radius;
+    background: $bg;
+    outline: none;
+    padding: $py $px;
+
+    font-size: $size;
+    font-weight: $weight;
+    font-family: 'Lato' sans-serif;
+    text-transform: capitalize;
+    color: $color;
+
+    &::placeholder {
+        font-size: $size;
+        font-weight: $weight;
+        text-transform: capitalize;
+        color: $color;
+    }
+
+    &[type=email] {
+        text-transform: lowercase !important;
+    }
 }
 
 @mixin overline($color, $weight, $size) {
@@ -84,6 +135,13 @@ $textFont: 1.1rem;
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
+.transition {
+    -webkit-transition: all 0.2s 0s ease;
+    -moz-transition: all 0.2s 0s ease;
+    -o-transition: all 0.2s 0s ease;
+    transition: all 0.2s 0s ease;
+}
 
 [class*="col-"] {
     padding: 1rem;
